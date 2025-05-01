@@ -10,11 +10,6 @@
       --bg-color: #f4f4f4;
       --text-color: #1a1a1a;
     }
-    
-    body.dark {
-      --bg-color: #1a1a1a;
-      --text-color: #e0e0e0;
-    }
 
     html {
       scroll-behavior: smooth;
@@ -61,58 +56,6 @@
     nav a.active {
       border-bottom: 2px solid currentColor;
       padding-bottom: 0.25rem;
-    }
-
-
-    .toggle-container {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-    }
-
-    .switch {
-      position: relative;
-      display: inline-block;
-      width: 40px;
-      height: 20px;
-    }
-
-    .switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: gray;
-      border-radius: 20px;
-      transition: 0.3s;
-    }
-
-    .slider:before {
-      position: absolute;
-      content: "";
-      height: 14px;
-      width: 14px;
-      left: 3px;
-      bottom: 3px;
-      background-color: white;
-      border-radius: 50%;
-      transition: 0.3s;
-    }
-
-    input:checked + .slider {
-      background-color: var(--accent-color);
-    }
-
-    input:checked + .slider:before {
-      transform: translateX(20px);
     }
 
     main {
