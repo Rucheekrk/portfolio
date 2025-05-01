@@ -44,22 +44,22 @@
     }
 
     nav a {
-      color: #f4f4f4;
+      color: #ffffff;
       text-decoration: none;
       margin: 0 1rem;
       font-weight: bold;
       font-size: 1.1rem;
       position: relative;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, color 0.3s ease;
+      transition: font-size 0.25s ease, transform 0.25s ease, color 0.3s ease;
     }
     
     nav a:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+      font-size: 1.25rem;       /* Enlarges slightly */
+      transform: translateY(-3px); /* Small upward motion */
     }
     
     nav a.active {
-      border-bottom: 2px solid currentColor; /* underline in same color */
+      border-bottom: 2px solid currentColor;
       padding-bottom: 0.25rem;
     }
 
