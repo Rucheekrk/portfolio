@@ -50,18 +50,23 @@
       font-weight: bold;
     }
 
-    nav a:hover {
-      color: var(--accent-color);
-    }
-
     .active {
       color: var(--accent-color);
       border-bottom: 2px solid var(--accent-color);
-      padding-bottom: 0.25rem;
+      padding: 0.25rem 0.5rem;
       font-weight: bold;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-      background-color: rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: rgba(0, 0, 0, 0.05); /* subtle gray */
       border-radius: 6px;
+      transform: translateY(-2px);
+      transition: all 0.3s ease;
+    }
+    
+    nav a:hover {
+      color: var(--accent-color);
+      background-color: rgba(0, 0, 0, 0.05); /* same gray as active */
+      border-radius: 6px;
+      padding: 0.25rem 0.5rem;
       transform: translateY(-2px);
       transition: all 0.3s ease;
     }
