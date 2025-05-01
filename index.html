@@ -221,6 +221,28 @@
   .project-box ul {
     padding-left: 1.25rem;
   }
+
+  section:nth-of-type(odd) {
+    background-color: #f9f9f9;
+  }
+
+  body.dark section:nth-of-type(odd) {
+    background-color: #1e1e1e;
+  }
+
+  section:not(:last-of-type)::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 80%;
+    margin: 2rem auto 0;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  body.dark section:not(:last-of-type)::after {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
   </style>
 </head>
 <body>
