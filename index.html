@@ -122,8 +122,11 @@
     
     .home-container {
       position: relative;
-      width: 100%;
-      max-width: 600px;
+      width: 75vw;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     /* Banner with custom image */
@@ -132,6 +135,7 @@
       background-size: cover;
       background-position: center;
       height: 200px;
+      width: 100%;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       position: relative;
@@ -145,7 +149,7 @@
       border-radius: 50%;
       border: 5px solid white;
       position: absolute;
-      top: 140px; /* Adjust based on banner height */
+      top: 160px; /* Adjust based on banner height */
       left: 50%;
       transform: translateX(-50%);
       z-index: 2;
