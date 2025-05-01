@@ -127,8 +127,27 @@
       object-fit: cover;
       margin-bottom: 1rem;
       border: 2px solid var(--accent-color);
+      position: relative;
+      top: -40px; /* Moves photo upward to overlap banner */
+      z-index: 2;  /* Ensures it sits above the banner */
     }
-  
+    
+    .home-container {
+      position: relative;
+      text-align: center;
+    }
+
+    .banner {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      z-index: 1;
+      position: relative;
+    }
+    
     .hero-heading {
       font-size: 3rem;
       font-weight: 700;
@@ -307,7 +326,10 @@
   
   <main>
     <section id="home">
-      <img src="images/rrk-photo.JPG" alt="Your Photo" class="home-img" />
+      <div class="home-container">
+        <div class="banner">Welcome to My Portfolio</div>
+        <img src="images/rrk-photo.JPG" alt="Your Photo" class="home-img" />
+      </div>
       <h1 class="hero-heading">Hi, I'm Rucheek R Kashyap</h1>
       <div class="description">
         <p>Master's in Business Analytics graduate with a background in Computer Science and a focus on AI-driven business solutions. Skilled in designing decision intelligence systems, integrating LLMs, and structuring analytical platforms for enterprise use.</p>
