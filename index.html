@@ -42,7 +42,7 @@
       border-bottom: 1px solid var(--text-color);
       box-sizing: border-box;
     }
-    
+
     nav a {
       color: #f4f4f4;
       text-decoration: none;
@@ -50,18 +50,18 @@
       font-weight: bold;
       font-size: 1.1rem;
       position: relative;
-      transition: transform 0.2s ease, color 0.3s ease;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, color 0.3s ease;
     }
     
     nav a:hover {
-      transform: translateY(-3px);
+      transform: translateY(-6px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
     }
     
     nav a.active {
-      border-bottom: 2px solid currentColor; /* underline in the same color */
+      border-bottom: 2px solid currentColor; /* underline in same color */
       padding-bottom: 0.25rem;
     }
-
 
 
     .toggle-container {
