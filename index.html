@@ -82,18 +82,28 @@
       align-items: flex-start;
     }
 
-  
     section {
       min-height: 100vh;
       padding: 4rem 2rem;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+      justify-content: flex-start;
+      align-items: flex-start;
+      text-align: left;
+      border-bottom: 1px solid #ddd; /* adds visual separation */
+      width: 100%;
     }
-  
+
+    section + section {
+      margin-top: 2rem;
+    }
+
+    .section-heading {
+      margin-top: 2rem;         /* Adds space above the heading */
+      margin-bottom: 1.5rem;    /* Adds space below the heading */
+    }
+
     #home {
       justify-content: flex-start;
     }
@@ -231,6 +241,11 @@
     section:nth-of-type(odd) {
       background-color: #f9f9f9;
     }
+    
+    section:nth-of-type(even) {
+      background-color: #ffffff;
+    }
+
   
     @media (max-width: 768px) {
       body {
