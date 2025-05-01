@@ -126,6 +126,12 @@
       text-align: center;
     }
 
+    #home {
+      padding-top: 6rem;
+      padding-bottom: 2rem;
+      justify-content: flex-start;
+    }
+
     h1 {
       color: var(--accent-color);
     }
@@ -140,12 +146,15 @@
     }
 
     .contact-links {
-      margin-top: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      justify-items: center;
+      width: 100%;
+      max-width: 500px;
     }
+
 
     .contact-links a {
       display: flex;
@@ -159,7 +168,7 @@
       color: var(--text-color);
       font-size: 1rem;
       transition: all 0.3s ease;
-      width: 250px;
+      width: 180px;
       justify-content: flex-start;
     }
 
