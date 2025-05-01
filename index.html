@@ -11,7 +11,7 @@
     }
     
     body.dark {
-      --bg-color: #1e1e1e;
+      --bg-color: #1a1a1a;
       --text-color: #e0e0e0;
     }
 
@@ -41,17 +41,19 @@
       border-bottom: 1px solid var(--text-color);
       box-sizing: border-box;
     }
-
+    
     nav a {
-      color: #ffffff;
+      color: #f4f4f4;
       text-decoration: none;
       margin: 0 1rem;
       font-weight: bold;
       font-size: 1.1rem;
       position: relative;
       padding-bottom: 0.25rem;
+      transition: color 0.3s ease;
     }
     
+    /* Underline animation setup */
     nav a::after {
       content: "";
       position: absolute;
@@ -59,26 +61,14 @@
       height: 2px;
       left: 0;
       bottom: 0;
-      background-color: var(--accent-color);
+      background-color: currentColor; /* Same as text color */
       transition: width 0.3s ease;
     }
     
+    /* Hover and Active underline */
     nav a:hover::after,
     nav a.active::after {
       width: 100%;
-    }
-
-
-    .active {
-      color: var(--accent-color);
-/*       border-bottom: 2px solid var(--accent-color); */
-      padding-bottom: 0.25rem;
-      font-weight: bold;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 6px;
-      transform: translateY(-2px);
-      transition: all 0.3s ease;
     }
 
 
