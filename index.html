@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <title>Rucheek's Portfolio</title>
   <style>
     :root {
@@ -21,7 +22,7 @@
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: "Inter", sans-serif;
       background-color: var(--accent-color);
       color: var(--accent-color);
       transition: background-color 0.3s, color 0.3s;
@@ -43,32 +44,32 @@
     }
     
     nav a {
-      color: #f4f4f4;
+      color: #ffffff;
       text-decoration: none;
       margin: 0 1rem;
       font-weight: bold;
       font-size: 1.1rem;
       position: relative;
       padding-bottom: 0.25rem;
-      transition: color 0.3s ease;
+      display: inline-block;
     }
     
-    /* Underline animation setup */
     nav a::after {
       content: "";
       position: absolute;
-      width: 0%;
-      height: 2px;
-      left: 0;
       bottom: 0;
-      background-color: currentColor; /* Same as text color */
-      transition: width 0.3s ease;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background-color: currentColor; /* uses the color of the text */
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
     }
     
-    /* Hover and Active underline */
     nav a:hover::after,
     nav a.active::after {
-      width: 100%;
+      transform: scaleX(1);
     }
 
 
