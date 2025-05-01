@@ -320,6 +320,18 @@
     </nav>
   </header>
 
+    <!-- You can include the script here at the bottom -->
+  <script>
+    const navLinks = document.querySelectorAll('nav a');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+  
   <main>
     <section id="home">
       <div class="home-container">
@@ -464,18 +476,6 @@
         if (link.getAttribute("href").includes(current)) {
           link.classList.add("active");
         }
-      });
-    });
-  </script>
-
-   <!-- You can include the script here at the bottom -->
-  <script>
-    const navLinks = document.querySelectorAll('nav a');
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', function () {
-        navLinks.forEach(l => l.classList.remove('active'));
-        this.classList.add('active');
       });
     });
   </script>
