@@ -64,13 +64,14 @@
     }
   
     nav a.active {
-      border-bottom: 2px solid currentColor;
-      padding-bottom: 0.25rem;
+      border-bottom: 2px solid currentColor;  /* Underlines the text */
+      padding-bottom: 0.25rem;  /* Adds space between the text and the underline */
+      text-decoration: none;  /* Ensures the text doesn't get double-underlined if it's already styled */
     }
-  
+
     /* === Right Main Content === */
     main {
-      margin-left: 33.33vw;
+      margin-left: 25vw;
       width: 66.67vw;
       height: 100vh;
       overflow-y: auto;
