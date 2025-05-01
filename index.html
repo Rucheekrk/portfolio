@@ -293,6 +293,18 @@
     </nav>
   </header>
 
+   <!-- You can include the script here at the bottom -->
+  <script>
+    const navLinks = document.querySelectorAll('nav a');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+  
   <main>
     <section id="home">
       <img src="images/rrk-photo.JPG" alt="Your Photo" class="home-img" />
