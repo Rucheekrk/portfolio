@@ -496,10 +496,13 @@
   </script>
   
   <script>
-    window.onload = function() {
-      // Scroll to the Home section when the page reloads
-      if (window.location.hash === "") {
-        window.location.hash = "#home";  // Directly go to the home section
+    window.onload = function () {
+      // Check if the hash is empty or if it's not already on #home
+      if (!window.location.hash || window.location.hash === "#home") {
+        const homeSection = document.getElementById("home");
+        if (homeSection) {
+          homeSection.scrollIntoView({ behavior: "smooth" });
+        }
       }
     };
   </script>
