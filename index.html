@@ -16,6 +16,10 @@
       --text-color: #000000;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -30,8 +34,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      width: 100%;
       z-index: 1000;
       border-bottom: 1px solid var(--text-color);
     }
@@ -65,15 +71,6 @@
       padding-bottom: 0.25rem;
     }
 
-    section {
-      padding: 4rem 2rem;
-    }
-
-    h1 {
-      color: var(--accent-color);
-    }
-
-    /* Toggle Switch */
     .toggle-container {
       display: flex;
       align-items: center;
@@ -123,6 +120,19 @@
 
     input:checked + .slider:before {
       transform: translateX(20px);
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 6rem 2rem 2rem; /* Extra top padding to clear fixed header */
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    h1 {
+      color: var(--accent-color);
     }
   </style>
 </head>
@@ -181,6 +191,27 @@
     const toggle = document.getElementById('themeToggle');
     toggle.addEventListener('change', () => {
       document.body.classList.toggle('light');
+    });
+
+    // Optional: Highlight nav links based on scroll position
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 100;
+        if (scrollY >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").includes(current)) {
+          link.classList.add("active");
+        }
+      });
     });
   </script>
 
