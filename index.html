@@ -171,6 +171,56 @@
         align-items: center;
       }
     }
+    
+  .work-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .work-column {
+    flex: 1;
+    background-color: rgba(0, 173, 181, 0.05);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    min-width: 300px;
+  }
+
+  .work-column h2 {
+    margin-top: 0;
+    color: var(--accent-color);
+  }
+
+  .work-column ul {
+    text-align: left;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .project-box {
+    background-color: rgba(0, 173, 181, 0.05);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .project-box h3 {
+    margin-top: 0;
+    color: var(--accent-color);
+  }
+
+  .project-box ul {
+    padding-left: 1.25rem;
+  }
   </style>
 </head>
 <body>
@@ -207,7 +257,7 @@
         <a href="https://github.com/rucheekrk" target="_blank">
           <img src="github.png" alt="GitHub Icon"> GitHub
         </a>
-        <a href="your-resume.pdf" target="_blank">
+        <a href="Rucheek-Resume.pdf" download>
           <img src="resume.png" alt="Resume Icon"> Resume
         </a>
       </div>
@@ -215,12 +265,86 @@
 
     <section id="work">
       <h1>Work</h1>
-      <p>Details about professional experiences or internships.</p>
+      <div class="work-container">
+        <div class="work-column">
+          <h2>Experience Area 1</h2>
+          <ul>
+            <li>Point one about experience</li>
+            <li>Point two about responsibility</li>
+            <li>Another placeholder point</li>
+          </ul>
+        </div>
+        <div class="work-column">
+          <h2>Experience Area 2</h2>
+          <ul>
+            <li>Point one about second role</li>
+            <li>Technologies used</li>
+            <li>Achievements or outcomes</li>
+          </ul>
+        </div>
+      </div>
     </section>
-
+    
     <section id="projects">
       <h1>Projects</h1>
-      <p>Showcase of personal or collaborative projects.</p>
+      <div class="projects-grid">
+        <div class="project-box">
+          <h3>Project 1</h3>
+          <ul>
+            <li>Project detail point</li>
+            <li>Another point</li>
+          </ul>
+        </div>
+        <div class="project-box">
+          <h3>Project 2</h3>
+          <ul>
+            <li>Project detail point</li>
+            <li>Another point</li>
+          </ul>
+        </div>
+        <div class="project-box">
+          <h3>Project 3</h3>
+          <ul>
+            <li>Project detail point</li>
+            <li>Another point</li>
+          </ul>
+        </div>
+        <div class="project-box">
+          <h3>Project 4</h3>
+          <ul>
+            <li>Project detail point</li>
+            <li>Another point</li>
+          </ul>
+        </div>
+        <div class="project-box">
+          <h3>Project 5</h3>
+          <ul>
+            <li>Project detail point</li>
+            <li>Another point</li>
+          </ul>
+        </div>
+        <div class="project-box">
+          <h3>Project 6</h3>
+          <ul>
+            <li>Project detail point</li>
+            <li>Another point</li>
+          </ul>
+        </div>
+        <div class="project-box">
+          <h3>Project 7</h3>
+          <ul>
+            <li>Project detail point</li>
+            <li>Another point</li>
+          </ul>
+        </div>
+        <div class="project-box">
+          <h3>Project 8</h3>
+          <ul>
+            <li>Project detail point</li>
+            <li>Another point</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <section id="skills">
