@@ -119,33 +119,37 @@
     h1 {
       color: var(--accent-color);
     }
-  
-    .home-img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 1rem;
-      border: 2px solid var(--accent-color);
-      position: relative;
-      top: -40px; /* Moves photo upward to overlap banner */
-      z-index: 2;  /* Ensures it sits above the banner */
-    }
     
     .home-container {
       position: relative;
-      text-align: center;
+      width: 100%;
+      max-width: 600px;
     }
 
+    /* Banner with custom image */
     .banner {
-      background-color: #333;
-      color: #fff;
-      padding: 1rem 2rem;
-      border-radius: 8px;
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-      z-index: 1;
+      background-image: url('your-banner.jpg'); /* ✅ replace with your image */
+      background-size: cover;
+      background-position: center;
+      height: 200px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       position: relative;
+      z-index: 1;
+    }
+
+    /* Profile photo overlaps the banner */
+    .profile-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 5px solid white;
+      position: absolute;
+      top: 140px; /* Adjust based on banner height */
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
     }
     
     .hero-heading {
@@ -327,8 +331,8 @@
   <main>
     <section id="home">
       <div class="home-container">
-        <div class="banner">Welcome to My Portfolio</div>
-        <img src="images/rrk-photo.JPG" alt="Your Photo" class="home-img" />
+        <div class="banner"></div>
+        <img src="images/rrk-photo.JPG" alt="Your Photo" class="profile-photo" />
       </div>
       <h1 class="hero-heading">Hi, I'm Rucheek R Kashyap</h1>
       <div class="description">
