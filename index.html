@@ -185,13 +185,17 @@
       margin-bottom: 1rem;
       letter-spacing: 1px;
       text-align: center;
-      transform: scale(1.05);
-    
+      transition: transform 0.3s ease;
       /* 3D-like multi-layered shadow */
       text-shadow:
         1px 1px 1px rgba(0, 0, 0, 0.2),
         2px 2px 2px rgba(0, 0, 0, 0.2),
         3px 3px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Hover effect */
+    .hero-heading:hover {
+      transform: scale(1.05);
     }
 
     .home-scale {
