@@ -314,7 +314,6 @@
       margin: 0 auto;
     }
 
-  
     .project-box {
       background-color: rgba(0, 173, 181, 0.05);
       border-radius: 10px;
@@ -322,7 +321,18 @@
       text-align: left;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
-  
+
+    .project-box-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .project-box:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    
     .project-box h3 {
       margin-top: 0;
       color: var(--accent-color);
@@ -484,14 +494,18 @@
     <section class="project-section" id="projects">
       <h1 class="section-heading">Academic Projects</h1>
       <div class="projects-grid">
-        <div class="project-box">
-          <h3>BERT Model Variants</h3>
-          <ul>
-            <li>Fine-tuned BERT for multilabel classification</li>
-            <p style="line-height: 0.5;"></p>
-            <li>Applied class weights and benchmarked models</li>
-          </ul>
-        </div>
+        
+        <a href="https://github.com/Rucheekrk/BERT-models-for-Multilabel-Classification-for-an-imbalanced-dataset" target="_blank" class="project-box-link">
+          <div class="project-box">
+            <h3>BERT Model Variants</h3>
+            <ul>
+              <li>Fine-tuned BERT for multilabel classification</li>
+              <p style="line-height: 0.5;"></p>
+              <li>Applied class weights and benchmarked models</li>
+            </ul>
+          </div>
+        </a>
+        
         <div class="project-box">
           <h3>Custom Built Model</h3></h3>
           <ul>
