@@ -81,7 +81,7 @@
       height: 100vh;
       overflow-y: auto;
       padding: 0 2rem;
-/*       box-sizing: border-box; */
+      box-sizing: border-box;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -124,11 +124,23 @@
       transform: translateZ(3px); /* subtle 3D effect */
     }
 
-    
     section + section {
       margin-top: 2rem;
     }
 
+    project-section {
+      /* min-height: 100vh; */
+      padding: 3rem 3rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      width: 100%;
+    }
+    
     #home {
       margin: 0;
       padding: 0;
@@ -469,7 +481,7 @@
       </div>
     </section>
     
-    <section id="projects">
+    <project-section id="projects">
       <h1 class="section-heading">Academic Projects</h1>
       <div class="projects-grid">
         <div class="project-box">
@@ -537,7 +549,7 @@
           </ul>
         </div>
       </div>
-    </section>
+    </project-section>
 
     <section id="skills">
       <h1 class="section-heading">Skills</h1>
