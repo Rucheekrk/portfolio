@@ -97,17 +97,24 @@
       justify-content: flex-start;
       align-items: flex-start;
       text-align: left;
-      border-bottom: 1px solid #ddd; /* adds visual separation */
+      border-bottom: 1px solid #ddd;
       width: 100%;
+    
+      /* 3D effect */
+      background: #fff;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* soft shadow */
+      transform: perspective(1000px) translateZ(1px); /* subtle 3D depth */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
 
     section + section {
       margin-top: 2rem;
     }
 
     .section-heading {
-      margin-top: 2rem;         /* Adds space above the heading */
-      margin-bottom: 1.5rem;    /* Adds space below the heading */
+      margin-top: 1rem;         /* Adds space above the heading */
+      margin-bottom: 1rem;    /* Adds space below the heading */
     }
 
     #home {
