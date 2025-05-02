@@ -386,7 +386,7 @@
       align-items: center;
       justify-content: center;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      padding: 0.75rem;
+      padding: 0.5rem;
       font-weight: bold;
       text-align: center;
     }
@@ -394,21 +394,27 @@
     .flip-card-front {
       background: white;
       color: var(--accent-color);
+      height: 100%;
     }
     
     .flip-card-front img {
       width: 40px;
       height: 40px;
-      margin-bottom: 1rem;
+      margin-bottom: 0.25rem;
+      object-fit: contain;
     }
     
     .flip-card-back {
       background: var(--accent-color);
       color: white;
       transform: rotateY(180deg);
+      font-size: 0.7;
     }
 
-
+    .flip-card-back p {
+      margin: 0;
+    }
+    
 /* Miscellaneous Items */
     section:nth-of-type(odd) {
       background-color: #f9f9f9;
