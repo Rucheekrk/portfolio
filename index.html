@@ -515,19 +515,22 @@
   </script>
 
 <!-- scroll-to-home script -->
-    <script>
+  <script>
     // This must run as early as possible, before the browser scrolls
     if (performance.navigation.type === 1 || performance.getEntriesByType("navigation")[0]?.type === "reload") {
       window.location.hash = ""; // Clear the hash
     }
   
     window.addEventListener("load", function () {
-      const homeSection = document.getElementById("home");
-      if (homeSection) {
-        homeSection.scrollIntoView({ behavior: "smooth" });
-      }
+      setTimeout(() => {
+        const homeSection = document.getElementById("home");
+        if (homeSection) {
+          homeSection.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100); // slight delay to allow observer to initialize
     });
   </script>
+
 
   
   <main>
