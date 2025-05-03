@@ -454,10 +454,10 @@
   </style>
 
   <script>
-    // // This must run as early as possible, before the browser scrolls
-    // if (performance.navigation.type === 1 || performance.getEntriesByType("navigation")[0]?.type === "reload") {
-    //   window.location.hash = ""; // Clear the hash
-    // }
+    // This must run as early as possible, before the browser scrolls
+    if (performance.navigation.type === 1 || performance.getEntriesByType("navigation")[0]?.type === "reload") {
+      window.location.hash = ""; // Clear the hash
+    }
   
     window.addEventListener("load", function () {
       const homeSection = document.getElementById("home");
