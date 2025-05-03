@@ -453,19 +453,6 @@
   }
   </style>
 
-  <script>
-    // This must run as early as possible, before the browser scrolls
-    if (performance.navigation.type === 1 || performance.getEntriesByType("navigation")[0]?.type === "reload") {
-      window.location.hash = ""; // Clear the hash
-    }
-  
-    window.addEventListener("load", function () {
-      const homeSection = document.getElementById("home");
-      if (homeSection) {
-        homeSection.scrollIntoView({ behavior: "smooth" });
-      }
-    });
-  </script>
 
 </head>
 <body>
@@ -523,9 +510,23 @@
         setActiveLink(this.getAttribute('href').substring(1));
       });
     });
-  
     // Initial set to home on load
     window.addEventListener('load', () => setActiveLink('home'));
+  </script>
+
+<!-- scroll-to-home script -->
+    <script>
+    // This must run as early as possible, before the browser scrolls
+    if (performance.navigation.type === 1 || performance.getEntriesByType("navigation")[0]?.type === "reload") {
+      window.location.hash = ""; // Clear the hash
+    }
+  
+    window.addEventListener("load", function () {
+      const homeSection = document.getElementById("home");
+      if (homeSection) {
+        homeSection.scrollIntoView({ behavior: "smooth" });
+      }
+    });
   </script>
 
   
