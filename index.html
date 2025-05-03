@@ -919,40 +919,54 @@
   </script> -->
 
   <script>
-    const navLinks = document.querySelectorAll('nav a');
-    const sections = document.querySelectorAll('section');
+    // Clear the URL hash before the browser auto-scrolls on refresh
+    if (performance.navigation.type === 1 || performance.getEntriesByType("navigation")[0]?.type === "reload") {
+      history.replaceState(null, "", window.location.pathname);
+    }
+  
+    // Scroll to home on load
+    window.addEventListener("load", () => {
+      const homeSection = document.getElementById("home");
+      if (homeSection) {
+        homeSection.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  
+    // Active link highlighting based on scroll
+    const navLinks = document.querySelectorAll("nav a");
+    const sections = document.querySelectorAll("section");
   
     const setActiveLink = (id) => {
       navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${id}`) {
-          link.classList.add('active');
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${id}`) {
+          link.classList.add("active");
         }
       });
     };
   
-    // IntersectionObserver for scroll
-    const observer = new IntersectionObserver(entries => {
+    // On click, set active
+    navLinks.forEach(link => {
+      link.addEventListener("click", function () {
+        const targetId = this.getAttribute("href").substring(1);
+        setActiveLink(targetId);
+      });
+    });
+  
+    // On scroll, use IntersectionObserver
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           setActiveLink(entry.target.id);
         }
       });
     }, {
-      threshold: 0.6
+      threshold: 0.6, // Adjust sensitivity
     });
   
     sections.forEach(section => observer.observe(section));
-  
-    // Click handler (optional, in case user clicks quickly)
-    navLinks.forEach(link => {
-      link.addEventListener('click', function () {
-        setActiveLink(this.getAttribute('href').substring(1));
-      });
-    });
-    // Initial set to home on load
-    window.addEventListener('load', () => setActiveLink('home'));
   </script>
+
 
   
 </body>
