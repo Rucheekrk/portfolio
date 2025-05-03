@@ -455,16 +455,27 @@
   </style>
 
   <script>
-    // This must run as early as possible, before the browser scrolls
-    if (performance.navigation.type === 1 || performance.getEntriesByType("navigation")[0]?.type === "reload") {
-      window.location.hash = ""; // Clear the hash
-    }
+    // // This must run as early as possible, before the browser scrolls
+    // if (performance.navigation.type === 1 || performance.getEntriesByType("navigation")[0]?.type === "reload") {
+    //   window.location.hash = ""; // Clear the hash
+    // }
   
     window.addEventListener("load", function () {
       const homeSection = document.getElementById("home");
       if (homeSection) {
         homeSection.scrollIntoView({ behavior: "smooth" });
       }
+    });
+  </script>
+
+  <script>
+    const navLinks = document.querySelectorAll('nav a');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
     });
   </script>
 
@@ -482,17 +493,6 @@
     </nav>
   </header>
 
-    <!-- You can include the script here at the bottom -->
-  <script>
-    const navLinks = document.querySelectorAll('nav a');
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', function () {
-        navLinks.forEach(l => l.classList.remove('active'));
-        this.classList.add('active');
-      });
-    });
-  </script>
   
   <main>
     <section id="home">
