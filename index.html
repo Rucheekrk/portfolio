@@ -923,14 +923,17 @@
     if (performance.navigation.type === 1 || performance.getEntriesByType("navigation")[0]?.type === "reload") {
       history.replaceState(null, "", window.location.pathname);
     }
-  
-    // Scroll to home on load
-    window.addEventListener("load", () => {
-      const homeSection = document.getElementById("home");
-      if (homeSection) {
-        homeSection.scrollIntoView({ behavior: "smooth" });
-      }
-    });
+
+  // Smooth scroll to home on load
+  window.addEventListener('load', () => {
+    const homeSection = document.getElementById('home');
+    if (homeSection) {
+      // Ensure smooth scroll is not blocked by browser settings or other factors
+      setTimeout(() => {
+        homeSection.scrollIntoView({ behavior: 'smooth' });
+      }, 100); // Adding slight delay to ensure everything is loaded
+    }
+  });
   
     // Active link highlighting based on scroll
     const navLinks = document.querySelectorAll("nav a");
