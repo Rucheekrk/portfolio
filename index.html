@@ -495,19 +495,20 @@
     const navLinks = document.querySelectorAll('nav a');
     const sections = document.querySelectorAll('section');
   
-    // Default active link
-    document.querySelector('nav a[href="#home"]').classList.add('active');
+    const setActiveLink = (id) => {
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${id}`) {
+          link.classList.add('active');
+        }
+      });
+    };
   
-    // Update active class on scroll
+    // IntersectionObserver for scroll
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Remove active from all
-          navLinks.forEach(link => link.classList.remove('active'));
-          
-          // Add to current section's nav link
-          const activeLink = document.querySelector(`nav a[href="#${entry.target.id}"]`);
-          if (activeLink) activeLink.classList.add('active');
+          setActiveLink(entry.target.id);
         }
       });
     }, {
@@ -516,13 +517,15 @@
   
     sections.forEach(section => observer.observe(section));
   
-    // Update active class on click
+    // Click handler (optional, in case user clicks quickly)
     navLinks.forEach(link => {
       link.addEventListener('click', function () {
-        navLinks.forEach(l => l.classList.remove('active'));
-        this.classList.add('active');
+        setActiveLink(this.getAttribute('href').substring(1));
       });
     });
+  
+    // Initial set to home on load
+    window.addEventListener('load', () => setActiveLink('home'));
   </script>
 
   
