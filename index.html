@@ -481,7 +481,7 @@
     </nav>
   </header>
 
-  <script>
+<!--   <script>
     const navLinks = document.querySelectorAll('nav a');
 
     navLinks.forEach(link => {
@@ -490,7 +490,44 @@
         this.classList.add('active');
       });
     });
+  </script> -->
+  <script>
+    // Select all sections and nav links
+    const sections = document.querySelectorAll('section'); // assumes your page has <section id="...">
+    const navLinks = document.querySelectorAll('nav a');
+  
+    // Highlight the active link on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+  
+          // Remove 'active' from all nav links
+          navLinks.forEach(link => link.classList.remove('active'));
+  
+          // Add 'active' to the current section's nav link
+          const activeLink = document.querySelector(`nav a[href="#${id}"]`);
+          if (activeLink) {
+            activeLink.classList.add('active');
+          }
+        }
+      });
+    }, {
+      threshold: 0.6, // Trigger when 60% of the section is visible
+    });
+  
+    // Observe each section
+    sections.forEach(section => observer.observe(section));
+  
+    // Keep your click listener too (for instant feedback)
+    navLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
   </script>
+
   
   <main>
     <section id="home">
