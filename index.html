@@ -101,6 +101,8 @@
       text-align: left;
       border-bottom: 1px solid #ddd; /* adds visual separation */
       width: 100%;
+      scroll-margin-top: 100vh; /* Adjust to your navbar height */
+
     }
 
 
@@ -902,7 +904,8 @@
     </section>
   </main>
 
-  <script>
+<!-- For Toggle Switch (just in case for future purposes) -->
+<!--   <script>
     const toggle = document.getElementById('themeToggle');
     toggle.addEventListener('change', () => {
       document.body.classList.toggle('dark');
@@ -927,19 +930,8 @@
         }
       });
     });
-  </script>
-  
-<!--   <script>
-    window.onload = function () {
-      // Check if the hash is empty or if it's not already on #home
-      if (!window.location.hash || window.location.hash === "#home") {
-        const homeSection = document.getElementById("home");
-        if (homeSection) {
-          homeSection.scrollIntoView({ behavior: "smooth" });
-        }
-      }
-    };
-  </script>
+  </script> -->
+
  -->
 </body>
 </html>
