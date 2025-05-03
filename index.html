@@ -468,17 +468,6 @@
     });
   </script>
 
-  <script>
-    const navLinks = document.querySelectorAll('nav a');
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', function () {
-        navLinks.forEach(l => l.classList.remove('active'));
-        this.classList.add('active');
-      });
-    });
-  </script>
-
 </head>
 <body>
 
@@ -493,6 +482,16 @@
     </nav>
   </header>
 
+  <script>
+    const navLinks = document.querySelectorAll('nav a');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
   
   <main>
     <section id="home">
