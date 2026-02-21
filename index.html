@@ -457,11 +457,7 @@
       transform: translateY(0) scale(1) rotateX(0deg);
     }
 
-    .project-box:hover {
-      transform: translateY(-10px) scale(1.02) rotateX(0deg);
-      box-shadow: 0 12px 40px rgba(255, 255, 255, 0.2);
-      background: rgba(255, 255, 255, 0.4);
-    }
+    /* Removed hover effect from project boxes */
 
     .project-box-link {
       text-decoration: none;
@@ -497,19 +493,26 @@
 
     .github-button {
       display: inline-block;
-      font-weight: 700; /* Bold and thick */
-      color: #1a1a1a;
-      padding: 0.25rem 0.5rem; /* Add consistent padding */
-      border-radius: 6px;
+      font-weight: 700;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
       text-decoration: none;
-      transition: color 0.3s ease, background-color 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.3s ease;
+      margin-top: 1rem;
     }
-    
+
     .github-button:hover {
-      background-color: #e0e0e0;
-      color: #000;
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.6);
+      box-shadow:
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 40px rgba(255, 255, 255, 0.4),
+        0 0 60px rgba(255, 255, 255, 0.2);
+      transform: translateY(-3px);
     }
 
     
@@ -912,6 +915,7 @@
               <li>Implemented semantic search across text and image modalities using ChromaDB vector store</li>
               <li>Developed Streamlit interface with batch PDF processing (50+ documents) and multi-KB management</li>
             </ul>
+            <a href="https://github.com/Rucheekrk/multimodal-rag-system" target="_blank" class="github-button">GitHub</a>
           </div>
 
           <div class="project-box">
@@ -922,6 +926,7 @@
               <li>Implemented concurrent load testing handling 1+ million requests with 50+ parallel clients and simulated load</li>
               <li>Containerized multi-service architecture with Docker Compose supporting dynamic worker scaling</li>
             </ul>
+            <a href="https://github.com/Rucheekrk/load-balancer-demo" target="_blank" class="github-button">GitHub</a>
           </div>
 
           <div class="project-box">
@@ -942,6 +947,7 @@
               <li>Configured Debezium for change data capture, streaming to Kafka and Flink for real-time aggregations</li>
               <li>Containerized distributed system with Docker Compose for consistent cross-environment deployment</li>
             </ul>
+            <a href="https://github.com/Rucheekrk/Real-Time-Analytics-Pipeline-with-Apache-Flink-Kafka-StarRocks" target="_blank" class="github-button">GitHub</a>
           </div>
 
           <div class="project-box">
@@ -953,6 +959,7 @@
               <li>Performed hyperparameter tuning with GridSearchCV and RFE, reducing feature space by 30%</li>
               <li>Ensured reproducibility through data versioning, schema validation, and experiment tracking</li>
             </ul>
+            <a href="https://github.com/Rucheekrk/Income-Classification-with-ML-Pipeline" target="_blank" class="github-button">GitHub</a>
           </div>
 
           <div class="project-box">
