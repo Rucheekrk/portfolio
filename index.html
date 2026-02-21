@@ -7,14 +7,28 @@
   <title>Rucheek's Portfolio</title>
 
   <style>
+    /* Light mode (default) */
     :root {
-      --bg-color: #f4f4f4;
-      --dark-bg-color: #0a2540;
+      --bg-color: #f5f5f5;
       --text-color: #1a1a1a;
-      --accent-color: #0a2540;
+      --accent-color: #2c3e50;
+      --nav-bg: #f5f5f5;
+      --tile-bg: rgba(230, 230, 230, 0.8);
+      --tile-border: rgba(200, 200, 200, 0.5);
+      --tile-hover-shadow: rgba(0, 0, 0, 0.15);
+      --link-hover-bg: rgba(0, 0, 0, 0.05);
+    }
+
+    /* Dark mode */
+    body.dark-mode {
+      --bg-color: #2a2a2a;
+      --text-color: #e8e8e8;
+      --accent-color: #e8e8e8;
+      --nav-bg: #2a2a2a;
+      --tile-bg: rgba(50, 50, 50, 0.8);
+      --tile-border: rgba(80, 80, 80, 0.5);
+      --tile-hover-shadow: rgba(255, 255, 255, 0.15);
       --link-hover-bg: rgba(255, 255, 255, 0.05);
-      --glass-bg: rgba(255, 255, 255, 0.25);
-      --glass-border: rgba(255, 255, 255, 0.18);
     }
 
     html {
@@ -26,35 +40,41 @@
       margin: 0;
       padding: 0;
       font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0f0f0f 100%);
+      background: var(--bg-color);
       color: var(--text-color);
       box-sizing: border-box;
       position: relative;
       overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
 /* === Top Navigation Bar === */
     nav {
       width: 100%;
       height: 70px;
-      background: rgba(10, 37, 64, 0.98);
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
+      background: var(--nav-bg);
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
       padding: 0 2rem;
       box-sizing: border-box;
       position: fixed;
       top: 0;
       left: 0;
       z-index: 1000;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
     }
 
     nav a {
-      color: #f4f4f4;
+      color: var(--text-color);
       text-decoration: none;
       margin: 0 1.5rem;
       font-weight: 600;
@@ -66,13 +86,38 @@
     }
 
     nav a:hover {
-      background: rgba(255, 255, 255, 0.1);
+      background: var(--link-hover-bg);
       transform: translateY(-2px);
     }
 
     nav a.active {
-      background: rgba(255, 255, 255, 0.15);
-      border-bottom: 2px solid #f4f4f4;
+      background: var(--link-hover-bg);
+      border-bottom: 2px solid var(--text-color);
+    }
+
+    /* Theme Toggle Button */
+    .theme-toggle {
+      background: var(--tile-bg);
+      border: 2px solid var(--tile-border);
+      border-radius: 50px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-color);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px var(--tile-hover-shadow);
+    }
+
+    .theme-icon {
+      font-size: 1.2rem;
     }
 
 
@@ -154,12 +199,12 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(10, 10, 10, 0.3);
+      background: transparent;
       z-index: 0;
     }
 
     h1 {
-      color: #ffffff;
+      color: var(--text-color);
     }
 
     .home-container {
@@ -186,10 +231,10 @@
       width: 280px;
       height: 280px;
       border-radius: 50%;
-      border: 6px solid rgba(255, 255, 255, 0.9);
+      border: 6px solid var(--tile-border);
       position: relative;
       z-index: 1;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 255, 255, 0.3);
+      box-shadow: 0 10px 40px var(--tile-hover-shadow);
       opacity: 0;
       transform: translateX(-50px) scale(0.9);
       transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -212,17 +257,13 @@
 
     .hero-heading {
       font-size: 2rem;
-      font-weight: 700; /* Increased for a stronger presence */
-      color: var(--accent-color);
+      font-weight: 700;
+      color: var(--text-color);
       margin-bottom: 1rem;
       letter-spacing: 1px;
       text-align: center;
       transition: transform 0.3s ease;
-      /* 3D-like multi-layered shadow */
-      text-shadow:
-        1px 1px 1px rgba(0, 0, 0, 0.2),
-        2px 2px 2px rgba(0, 0, 0, 0.2),
-        3px 3px 3px rgba(0, 0, 0, 0.2);
+      text-shadow: 2px 2px 4px var(--tile-hover-shadow);
     }
 
     /* Hover effect */
@@ -253,7 +294,7 @@
     .hero-heading h1 {
       font-size: 2.5rem;
       margin: 0;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+      text-shadow: 2px 2px 8px var(--tile-hover-shadow);
     }
 
     .description {
@@ -263,7 +304,7 @@
       line-height: 1.6;
       font-size: 1rem;
       margin-bottom: 1.5rem;
-      color: #f0f0f0;
+      color: var(--text-color);
     }
   
     .contact-links {
@@ -278,15 +319,15 @@
     .contact-links a {
       display: flex;
       align-items: center;
-      background: rgba(255, 255, 255, 0.15);
+      background: var(--tile-bg);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      border: 1px solid var(--tile-border);
       border-radius: 12px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 8px 32px var(--tile-hover-shadow);
       padding: 0.6rem 1.2rem;
       text-decoration: none;
-      color: #ffffff;
+      color: var(--text-color);
       font-size: 0.9rem;
       font-weight: 600;
       transition: all 0.3s ease;
@@ -302,11 +343,11 @@
     }
 
     .contact-links a:hover {
-      box-shadow: 0 12px 40px rgba(255, 255, 255, 0.3);
+      box-shadow: 0 12px 40px var(--tile-hover-shadow);
       transform: translateY(-8px) scale(1.05);
-      color: #ffffff;
-      background: rgba(255, 255, 255, 0.25);
-      border-color: rgba(255, 255, 255, 0.5);
+      color: var(--text-color);
+      background: var(--tile-bg);
+      border-color: var(--tile-border);
     }
 
     .contact-links a:hover img {
@@ -327,13 +368,13 @@
 
     .work-column {
       flex: 1;
-      background: rgba(255, 255, 255, 0.25);
+      background: var(--tile-bg);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       padding: 2rem;
       border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--tile-border);
+      box-shadow: 0 8px 32px var(--tile-hover-shadow);
       min-width: 300px;
       transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
       opacity: 0;
@@ -347,7 +388,7 @@
 
     .work-column:hover {
       transform: translateY(-10px) scale(1);
-      box-shadow: 0 12px 40px rgba(255, 255, 255, 0.2);
+      box-shadow: 0 12px 40px var(--tile-hover-shadow);
     }
 
     .work-column h2 {
@@ -391,14 +432,14 @@
     }
 
     .project-box {
-      background: rgba(255, 255, 255, 0.3);
+      background: var(--tile-bg);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       border-radius: 20px;
       padding: 1.5rem;
       text-align: left;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--tile-border);
+      box-shadow: 0 8px 32px var(--tile-hover-shadow);
       transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
       opacity: 0;
       transform: translateY(50px) scale(0.9) rotateX(10deg);
@@ -429,7 +470,7 @@
     .project-box h4 {
       margin-top: 0;
       margin-bottom: 1rem;
-      color: #f4f4f4;
+      color: var(--text-color);
       font-size: 0.9rem;
       font-weight: 400;
     }
@@ -449,24 +490,21 @@
     .github-button {
       display: inline-block;
       font-weight: 700;
-      color: #ffffff;
-      background: rgba(255, 255, 255, 0.15);
+      color: var(--text-color);
+      background: var(--tile-bg);
       padding: 0.6rem 1.2rem;
       border-radius: 8px;
       text-decoration: none;
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      border: 1px solid var(--tile-border);
       transition: all 0.3s ease;
       margin-top: 1rem;
     }
 
     .github-button:hover {
-      background: rgba(255, 255, 255, 0.25);
-      color: #ffffff;
-      border-color: rgba(255, 255, 255, 0.6);
-      box-shadow:
-        0 0 20px rgba(255, 255, 255, 0.6),
-        0 0 40px rgba(255, 255, 255, 0.4),
-        0 0 60px rgba(255, 255, 255, 0.2);
+      background: var(--tile-bg);
+      color: var(--text-color);
+      border-color: var(--tile-border);
+      box-shadow: 0 8px 20px var(--tile-hover-shadow);
       transform: translateY(-3px);
     }
 
@@ -511,22 +549,18 @@
       padding: 1rem;
       font-weight: bold;
       text-align: center;
-      background: rgba(255, 255, 255, 0.3);
+      background: var(--tile-bg);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      border: 2px solid rgba(255, 255, 255, 0.18);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-      color: var(--accent-color);
+      border: 2px solid var(--tile-border);
+      box-shadow: 0 8px 32px var(--tile-hover-shadow);
+      color: var(--text-color);
       transition: all 0.4s ease;
     }
 
     .flip-card:hover .flip-card-front {
-      border-color: rgba(255, 255, 255, 0.9);
-      box-shadow:
-        0 0 20px rgba(255, 255, 255, 0.6),
-        0 0 40px rgba(255, 255, 255, 0.4),
-        0 0 60px rgba(255, 255, 255, 0.2),
-        0 8px 32px rgba(0, 0, 0, 0.2);
+      border-color: var(--tile-border);
+      box-shadow: 0 12px 40px var(--tile-hover-shadow);
       transform: translateY(-5px);
     }
 
@@ -545,7 +579,7 @@
     .flip-card-front h4 {
       font-size: 0.9rem;
       margin: 0;
-      color: #ffffff;
+      color: var(--text-color);
     }
 
     /* Hide the back face */
@@ -568,22 +602,22 @@
       background: transparent;
     }
 
-    /* Update text colors for dark background */
+    /* Update text colors */
     section h1, section h2, section h3, section h4, section p, section li {
-      color: #f4f4f4;
+      color: var(--text-color);
     }
 
     .section-heading {
-      color: #ffffff;
-      text-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 2px 2px 4px rgba(0, 0, 0, 0.5);
+      color: var(--text-color);
+      text-shadow: 2px 2px 4px var(--tile-hover-shadow);
     }
 
     .hero-heading h1 {
-      color: #ffffff;
+      color: var(--text-color);
     }
 
     .description {
-      color: #e0e0e0;
+      color: var(--text-color);
     }
 
 /* Animations */
@@ -664,8 +698,13 @@
   @media (max-width: 768px) {
     nav {
       height: auto;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 1rem;
       padding: 1rem;
+    }
+
+    .nav-links {
+      flex-wrap: wrap;
       justify-content: center;
     }
 
@@ -673,6 +712,10 @@
       font-size: 0.9rem;
       margin: 0.5rem;
       padding: 0.4rem 0.8rem;
+    }
+
+    .theme-toggle {
+      align-self: center;
     }
 
     main {
@@ -695,7 +738,7 @@
     }
 
     #home::before {
-      background: rgba(10, 37, 64, 0.85);
+      background: transparent;
     }
 
     .home-container {
@@ -773,11 +816,17 @@
 
   <header>
     <nav>
-      <a href="#home" class="active">Home</a>
-      <a href="#work">Work</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
+      <div class="nav-links">
+        <a href="#home" class="active">Home</a>
+        <a href="#work">Work</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle">
+        <span class="theme-icon" id="themeIcon">☀️</span>
+        <span id="themeText">Light</span>
+      </button>
     </nav>
   </header>
 
@@ -1184,6 +1233,35 @@
   </script> -->
 
   <script>
+    // Theme Toggle Functionality
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeText = document.getElementById('themeText');
+    const body = document.body;
+
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+
+    if (currentTheme === 'dark') {
+      body.classList.add('dark-mode');
+      themeIcon.textContent = '🌙';
+      themeText.textContent = 'Dark';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+
+      if (body.classList.contains('dark-mode')) {
+        themeIcon.textContent = '🌙';
+        themeText.textContent = 'Dark';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        themeIcon.textContent = '☀️';
+        themeText.textContent = 'Light';
+        localStorage.setItem('theme', 'light');
+      }
+    });
+
     // Clear the URL hash before the browser auto-scrolls on refresh
     if (performance.navigation.type === 1 || performance.getEntriesByType("navigation")[0]?.type === "reload") {
       history.replaceState(null, "", window.location.pathname);
