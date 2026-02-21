@@ -471,7 +471,16 @@
 
     .project-box h3 {
       margin-top: 0;
+      margin-bottom: 0.5rem;
       color: var(--accent-color);
+    }
+
+    .project-box h4 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: #f4f4f4;
+      font-size: 0.9rem;
+      font-weight: 400;
     }
 
     .project-box ul {
@@ -800,7 +809,7 @@
     <nav>
       <a href="#home" class="active">Home</a>
       <a href="#work">Work</a>
-      <a href="#projects">Academic Projects</a>
+      <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
       <a href="#education">Education</a>
     </nav>
@@ -885,84 +894,69 @@
     </section>
     
     <section class="project-section" id="projects">
-      <h1 class="section-heading">Academic Projects</h1>
+      <h1 class="section-heading">Projects</h1>
       <div class="projects-grid">
           <div class="project-box">
-            <h3>BERT Model Variants</h3>
+            <h3>Multi-label Sentiment Classification with QLoRA Fine-tuning</h3>
+            <h4>Sep 2025 - Nov 2025</h4>
             <ul>
-              <li>Fine-tuned BERT for multilabel classification</li>
-              <p style="line-height: 0.5;"></p>
-              <li>Applied class weights and benchmarked models</li>
+              <li>Applied QLoRA fine-tuning to BERT-based model, updating only 3% of parameters while achieving 87% macro F1-score</li>
+              <li>Implemented SMOTE oversampling, class-weighted loss function, and stratified sampling to address imbalanced distributions across 11 sentiment categories, improving baseline macro F1-score from 75% to 83%</li>
+              <li>Optimized per-label classification thresholds using precision-recall curves, improving macro F1-score from 83% to 87%</li>
             </ul>
-            <a href="https://github.com/Rucheekrk/BERT-models-for-Multilabel-Classification-for-an-imbalanced-dataset" target="_blank" class="github-button">GitHub</a>
-          </div>
-        
-
-          <div class="project-box">
-            <h3>Custom Built Model</h3>
-            <ul>
-              <li>Built multilabel classifier with PyTorch</li>
-              <p style="line-height: 0.5;"></p>
-              <li>Custom config, handled imbalance, F1-evaluated</li>
-            </ul>
-            <a href="https://github.com/Rucheekrk/Custom-Built-Model-for-Multilabel-Classification-for-an-imbalanced-dataset" target="_blank" class="github-button">Github</a>
-          </div>
-        
-          <div class="project-box">
-            <h3>Credit Risk Analysis</h3>
-            <ul>
-              <li>Predictive models for default risk management</li>
-              <p style="line-height: 0.5;"></p>
-              <li>Boost loan access for limited-credit borrowers</li>
-            </ul>
-            <a href="https://github.com/Rucheekrk/Home-Credit-Default-Risk-Analysis" target="_blank" class="github-button">Github</a>
-          </div>
-        
-          <div class="project-box">
-            <h3>Meat Substitute Analysis</h3>
-            <ul>
-              <li>Analyzed Conagra’s data to boost market growth</li>
-              <p style="line-height: 0.5;"></p>
-              <li>Provided strategic insights for executive desicions</li>
-            </ul>
-            <a href="https://github.com/Rucheekrk/Predictive-Analysis-and-Strategic-Insights-for-Meat-Substitutes-at-Conagra" target="_blank" class="github-button">Github</a>
           </div>
 
           <div class="project-box">
-            <h3>Income Prediction</h3>
+            <h3>Income Classification with ML Pipeline</h3>
+            <h4>Mar 2025 - May 2025</h4>
             <ul>
-              <li>Built ML model for income prediction tasks</li>
-              <p style="line-height: 0.5;"></p>
-              <li>XGBoost best; supports business and policy use</li>
+              <li>Built an ML pipeline on Census dataset (40,000+ records) to predict income levels, implementing feature engineering, categorical encoding, and class imbalance handling</li>
+              <li>Trained and compared multiple algorithms (Logistic Regression, Random Forest, KNN, XGBoost) using stratified cross-validation, achieving 90.11% accuracy with optimized Random Forest</li>
+              <li>Performed hyperparameter tuning with GridSearchCV and feature selection using RFE, reducing feature space by 30%</li>
+              <li>Ensured reproducibility through data versioning, schema validation, and experiment tracking across model iterations</li>
             </ul>
-            <a href="https://github.com/Rucheekrk/Adult-Census-Income" target="_blank" class="github-button">Github</a>
           </div>
 
           <div class="project-box">
-            <h3>Inside AirBnB</h3>
+            <h3>Customer Demand Forecasting with Ensemble Learning</h3>
+            <h4>Jan 2025 - Mar 2025</h4>
             <ul>
-              <li>Boosted Airbnb ops with data-driven insights</li>
-              <p style="line-height: 0.5;"></p>
-              <li>Optimized pricing, host rewards, and strategy</li>
+              <li>Developed ensemble forecasting models (XGBoost, Random Forest, LSTM) on 100,000+ records, engineering 25+ features from sales, temporal, and product attributes to predict seasonal demand</li>
+              <li>Performed hyperparameter tuning using grid search and cross-validation, improving forecast accuracy by 18% (MAPE reduction from 12.5% to 10.2%)</li>
+              <li>Analyzed feature importance using SHAP values, revealing top 5 demand drivers that informed inventory strategy across 8 markets</li>
+              <li>Containerized XGBoost model with Flask API using Docker for reproducible deployment, testing, and cloud-ready portability</li>
             </ul>
-            <a href="https://github.com/Rucheekrk/Inside-AirBnB" target="_blank" class="github-button">Github</a>
           </div>
-<!--         <div class="project-box">
-          <h3>Project 7</h3>
-          <ul>
-            <li>Project detail point</li>
-            <p style="line-height: 0.5;"></p>
-            <li>Another point</li>
-          </ul>
-        </div>
-        <div class="project-box">
-          <h3>Project 8</h3>
-          <ul>
-            <li>Project detail point</li>
-            <p style="line-height: 0.5;"></p>
-            <li>Another point</li>
-          </ul>
-        </div> -->
+
+          <div class="project-box">
+            <h3>Real-Time Streaming Analytics with Flink & StarRocks</h3>
+            <h4>Jul 2025 - Aug 2025</h4>
+            <ul>
+              <li>Built end-to-end streaming pipeline using Kafka, Flink, and StarRocks to process 10,000+ simulated e-commerce events per minute with sub-second latency</li>
+              <li>Configured Debezium to capture data changes, streamed to Kafka, processed by Flink for real-time order and revenue aggregations</li>
+              <li>Containerized distributed system with Docker Compose for consistent deployment across local and cloud environments</li>
+            </ul>
+          </div>
+
+          <div class="project-box">
+            <h3>Network Protocol Analysis & Configuration</h3>
+            <h4>Jul 2024 - Aug 2024</h4>
+            <ul>
+              <li>Performed analysis of TCP and UDP protocols, examining handshake sequences, checksum validation, and transmission patterns</li>
+              <li>Designed and implemented standard and extended ACLs in Cisco IOS using GNS3 to implement network security and traffic filtering</li>
+              <li>Implemented OSPF routing protocol in GNS3 network topology, configuring areas and verifying routing table convergence</li>
+            </ul>
+          </div>
+
+          <div class="project-box">
+            <h3>Customer Demand Forecasting & Market Analysis</h3>
+            <h4>Feb 2024 - May 2024</h4>
+            <ul>
+              <li>Developed customer demand forecasting models on 100,000+ records, engineering features from sales and product attributes to predict seasonal trends</li>
+              <li>Conducted exploratory analysis on 4 years of sales data across 8 regional markets, identifying demand drivers and seasonal patterns</li>
+              <li>Built Power BI dashboards tracking sales performance and forecasts, delivering actionable insights for strategic portfolio</li>
+            </ul>
+          </div>
       </div>
     </section>
 
