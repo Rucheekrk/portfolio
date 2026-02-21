@@ -501,7 +501,6 @@
       background: transparent;
       width: 120px;
       height: 140px;
-      perspective: 1000px;
       opacity: 0;
       transform: translateY(50px) scale(0.8);
       transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -516,21 +515,12 @@
       position: relative;
       width: 100%;
       height: 100%;
-      transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
-      transform-style: preserve-3d;
     }
 
-    .flip-card:hover .flip-card-inner {
-      transform: rotateY(180deg) scale(1.05);
-    }
-
-    .flip-card-front,
-    .flip-card-back {
-      position: absolute;
+    .flip-card-front {
       width: 100%;
       height: 100%;
       border-radius: 20px;
-      backface-visibility: hidden;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -538,21 +528,23 @@
       padding: 1rem;
       font-weight: bold;
       text-align: center;
-    }
-
-    .flip-card-front {
       background: rgba(255, 255, 255, 0.3);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      border: 2px solid rgba(255, 255, 255, 0.18);
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
       color: var(--accent-color);
-      height: 100%;
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
     }
 
     .flip-card:hover .flip-card-front {
-      box-shadow: 0 12px 40px rgba(10, 37, 64, 0.2);
+      border-color: rgba(255, 255, 255, 0.9);
+      box-shadow:
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 40px rgba(255, 255, 255, 0.4),
+        0 0 60px rgba(255, 255, 255, 0.2),
+        0 8px 32px rgba(0, 0, 0, 0.2);
+      transform: translateY(-5px);
     }
 
     .flip-card-front img {
@@ -564,28 +556,18 @@
     }
 
     .flip-card:hover .flip-card-front img {
-      transform: scale(1.1);
+      transform: scale(1.15);
     }
 
     .flip-card-front h4 {
       font-size: 0.9rem;
       margin: 0;
+      color: #ffffff;
     }
 
+    /* Hide the back face */
     .flip-card-back {
-      background: rgba(10, 37, 64, 0.95);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-      color: white;
-      line-height: 1.4;
-      transform: rotateY(180deg);
-      font-size: 0.75rem;
-    }
-
-    .flip-card-back p {
-      margin: 0;
+      display: none;
     }
     
 /* Miscellaneous Items */
@@ -999,9 +981,6 @@
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
               <h4>Python</h4>
             </div>
-            <div class="flip-card-back">
-              <p>3+ years experience<br>Used in ML, data analysis & APIs</p>
-            </div>
           </div>
         </div>
 
@@ -1011,9 +990,6 @@
               <!-- R -->
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R" />
               <h4>R</h4>
-            </div>
-            <div class="flip-card-back">
-              <p>3+ years experience<br>Used for stats modeling & visualization</p>
             </div>
           </div>
         </div>
@@ -1025,9 +1001,6 @@
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
               <h4>MySQL</h4>
             </div>
-            <div class="flip-card-back">
-              <p>3+ years experience<br>Used for querying, joins & data cleaning</p>
-            </div>
           </div>
         </div>
 
@@ -1037,9 +1010,6 @@
               <!-- MongoDB -->
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
               <h4>MongoDB</h4>
-            </div>
-            <div class="flip-card-back">
-              <p>2+ years experience<br>Used for NoSQL DBs & fast data retrieval</p>
             </div>
           </div>
         </div>
@@ -1051,9 +1021,6 @@
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" />
               <h4>C++</h4>
             </div>
-            <div class="flip-card-back">
-              <p>2+ years experience<br>Used in DSA & systems-level applications</p>
-            </div>
           </div>
         </div>
 
@@ -1063,9 +1030,6 @@
               <!-- HTML -->
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
               <h4>HTML</h4>
-            </div>
-            <div class="flip-card-back">
-              <p>3+ years experience<br>Used in web structuring & custom UIs</p>
             </div>
           </div>
         </div>
@@ -1077,9 +1041,6 @@
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
               <h4>CSS</h4>
             </div>
-            <div class="flip-card-back">
-              <p>3+ years experience<br>Used for web styling & responsive design</p>
-            </div>
           </div>
         </div>
 
@@ -1089,9 +1050,6 @@
               <!-- AWS -->
               <img src="icons/aws-icons8.svg" alt="AWS" />
               <h4>AWS</h4>
-            </div>
-            <div class="flip-card-back">
-              <p>1+ year experience<br>Used for deployment, S3 & EC2</p>
             </div>
           </div>
         </div>
@@ -1103,9 +1061,6 @@
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" />
               <h4>PyTorch</h4>
             </div>
-            <div class="flip-card-back">
-              <p>1+ year experience<br>Used in DL models & GPU training</p>
-            </div>
           </div>
         </div>
 
@@ -1115,9 +1070,6 @@
               <!-- Hadoop -->
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hadoop/hadoop-original.svg" alt="Hadoop" />
               <h4>Hadoop</h4>
-            </div>
-            <div class="flip-card-back">
-              <p>1+ year experience<br>Used for big data storage & processing</p>
             </div>
           </div>
         </div>
@@ -1129,9 +1081,6 @@
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" alt="Apache (use for Spark)" />
               <h4>Spark</h4>
             </div>
-            <div class="flip-card-back">
-              <p>1+ year experience<br>Used for fast big data computation</p>
-            </div>
           </div>
         </div>
 
@@ -1141,9 +1090,6 @@
               <!-- LaTeX -->
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/latex/latex-original.svg" alt="LaTeX" />
               <h4>Latex</h4>
-            </div>
-            <div class="flip-card-back">
-              <p>2+ years experience<br>Used for academic docs & typesetting</p>
             </div>
           </div>
         </div>
@@ -1155,9 +1101,6 @@
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
               <h4>Git</h4>
             </div>
-            <div class="flip-card-back">
-              <p>1+ year experience<br>Used for version control & collaboration</p>
-            </div>
           </div>
         </div>
 
@@ -1167,9 +1110,6 @@
               <!-- Power BI -->
               <img src="icons/power-bi-icon.svg" alt="Power BI" />
               <h4>Power BI</h4>
-            </div>
-            <div class="flip-card-back">
-              <p>1+ year experience<br>Used for dashboards & business reporting</p>
             </div>
           </div>
         </div>
@@ -1181,9 +1121,6 @@
               <img src="icons/tableau-software-icons8.svg" alt="Tableau" />
               <h4>Tableau</h4>
             </div>
-            <div class="flip-card-back">
-              <p>1+ year experience<br>Used for interactive data visualizations</p>
-            </div>
           </div>
         </div>
 
@@ -1193,9 +1130,6 @@
               <!-- Microsoft Office -->
               <img src="icons/microsoft-office-icons8.svg" alt="Office" />
               <h4>Office</h4>
-            </div>
-            <div class="flip-card-back">
-              <p>6+ years experience<br>Used for docs, analysis & presentations</p>
             </div>
           </div>
         </div>
