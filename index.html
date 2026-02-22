@@ -134,29 +134,39 @@
       border-bottom: 2px solid var(--text-color);
     }
 
-    /* Theme Toggle Button */
+    /* Theme Toggle Switch */
     .theme-toggle {
+      position: relative;
+      width: 60px;
+      height: 30px;
       background: var(--tile-bg);
       border: 2px solid var(--tile-border);
       border-radius: 50px;
-      padding: 0.5rem 1rem;
       cursor: pointer;
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--text-color);
       transition: all 0.3s ease;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      padding: 0;
     }
 
     .theme-toggle:hover {
-      transform: scale(1.05);
       box-shadow: 0 4px 12px var(--tile-hover-shadow);
     }
 
     .theme-icon {
-      font-size: 1.2rem;
+      position: absolute;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      left: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+    }
+
+    body.dark-mode .theme-icon {
+      left: 32px;
     }
 
 
@@ -867,7 +877,6 @@
       </div>
       <button class="theme-toggle" id="themeToggle">
         <span class="theme-icon" id="themeIcon">☀️</span>
-        <span id="themeText">Light</span>
       </button>
     </nav>
   </header>
@@ -1316,7 +1325,6 @@
     // Theme Toggle Functionality
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
-    const themeText = document.getElementById('themeText');
     const body = document.body;
 
     // Check for saved theme preference or default to light mode
@@ -1325,7 +1333,6 @@
     if (currentTheme === 'dark') {
       body.classList.add('dark-mode');
       themeIcon.textContent = '🌙';
-      themeText.textContent = 'Dark';
     }
 
     themeToggle.addEventListener('click', () => {
@@ -1333,11 +1340,9 @@
 
       if (body.classList.contains('dark-mode')) {
         themeIcon.textContent = '🌙';
-        themeText.textContent = 'Dark';
         localStorage.setItem('theme', 'dark');
       } else {
         themeIcon.textContent = '☀️';
-        themeText.textContent = 'Light';
         localStorage.setItem('theme', 'light');
       }
     });
